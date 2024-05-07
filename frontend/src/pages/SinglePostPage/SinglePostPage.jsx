@@ -16,6 +16,7 @@ import {
 import React from 'react';
 import RateReviewIcon from '@mui/icons-material/RateReview';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import WriteReview from '../../components/WriteReview';
 
 const SinglePostPage = () => {
   return (
@@ -113,12 +114,7 @@ const SinglePostPage = () => {
             alignItems: 'center',
           }}
         >
-          <Button
-            sx={{ border: '2px solid grey', borderRadius: 4, color: '#000000' }}
-          >
-            Write a Review
-            <RateReviewIcon color="icon" sx={{ height: '20px' }} />
-          </Button>
+          <WriteReview />
           <Box
             sx={{
               display: 'flex',
