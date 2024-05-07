@@ -91,7 +91,7 @@ export default function LoginPage() {
           alignItems: 'center',
         }}
       >
-        <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+        <Avatar sx={{ m: 1, bgcolor: 'secondary.main', marginTop:5 }}>
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
@@ -150,10 +150,10 @@ export default function LoginPage() {
               alignItems: 'center',
             }}
           >
-            <FormControlLabel
+            {/* <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
-            />
+            /> */}
             <Link href="#" variant="body2">
               Forgot password?
             </Link>
@@ -162,15 +162,20 @@ export default function LoginPage() {
             type="submit"
             fullWidth
             variant="contained"
-            sx={{ mt: 3, mb: 2 }}
+            sx={{
+              mt: 5,
+              mb: 2,
+              borderRadius: 2,
+              bgcolor: 'rgb(255,207,96)',
+              color: '#808080',
+              '&:hover': {
+                bgcolor: 'rgb(255,199,71)',
+                color: '#382e7f',
+              },
+            }}
           >
             Login
           </Button>
-          <Grid container>
-            <Link href="/register" variant="body2">
-              {"Don't have an account? Sign Up"}
-            </Link>
-          </Grid>
         </Box>
       </Box>
       <Copyright sx={{ mt: 8, mb: 4 }} />
@@ -186,9 +191,21 @@ function Copyright(props) {
       align="center"
       {...props}
     >
-      {'Copyright © '}
-      <Link color="inherit">Lectermo</Link> {new Date().getFullYear()}
-      {'.'}
+      {"Don't have an account? "}
+      <Link
+        href="/register"
+        variant="body2"
+        sx={{
+          textDecoration: 'none',
+          color: '#1C89B6',
+          '&:hover': {
+            textDecoration: 'underline',
+            color: '#1c69b6',
+          },
+        }}
+      >
+        {' Sign Up'}
+      </Link>
     </Typography>
   );
 }

@@ -190,15 +190,30 @@ export default function RegisterPage() {
               </FormControl>
             </Grid>
             <Grid item xs={12}>
-              <TextField
-                required
-                fullWidth
-                name="confirmPassword"
-                label="Confirm Password"
-                type="password"
-                value={formData.confirmPassword}
-                onChange={handleChange}
-              />
+
+              <FormControl fullWidth required variant="outlined">
+                <InputLabel htmlFor="confirmPassword">Confirm Password</InputLabel>
+                <OutlinedInput
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  type={showPassword ? 'text' : 'password'}
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
+                  endAdornment={
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                        edge="end"
+                      >
+                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                      </IconButton>
+                    </InputAdornment>
+                  }
+                  label="Confirm Password"
+                />
+              </FormControl>
             </Grid>
             <Grid item xs={12}>
               <FormControl fullWidth required variant="outlined">
@@ -217,7 +232,7 @@ export default function RegisterPage() {
                 </Select>
               </FormControl>
             </Grid>
-            <Grid item xs={12}>
+            {/* <Grid item xs={12}>
               <FormControlLabel
                 control={
                   <Checkbox
@@ -229,7 +244,7 @@ export default function RegisterPage() {
                 }
                 label="I want to receive notifications, updates via email."
               />
-            </Grid>
+            </Grid> */}
             <Grid item xs={12} sm={6}>
               <Calendar />
             </Grid>
