@@ -1,14 +1,16 @@
 import { faker } from '@faker-js/faker';
 import { Course } from '../../schemas/courseSchema.js';
 import { coursesJSON } from './raw/coursesJSON.js';
+import { newCoursesJSON } from './raw/newCoursesJSON.js'
 
 const NUMBER_OF_COURSES = 5;
 
 export async function initCourses() {
   try {
-    const intialCourses = await Course.insertMany(coursesJSON);
+    // const intialCourses = await Course.insertMany(coursesJSON)
+    const secondInitCourses = await Course.insertMany(newCoursesJSON);
     console.log('Courses initialized.');
-    return intialCourses;
+    return secondInitCourses;
   } catch (error) {
     console.error('Error adding courses:', error);
     throw error;
@@ -72,27 +74,41 @@ export async function populateCourses(users, courses) {
         // Populate course details
         course.courseName = faker.company.catchPhrase();
         (course.lecturer = faker.helpers.arrayElement(users)._id),
-          (course.description = faker.lorem.paragraph());
-        course.category = faker.commerce.department();
+          (course.description = course.description);
+        course.category = course.category;
         course.level = faker.helpers.arrayElement([
           'Bachelor',
           'Postgrad',
           'Masters',
         ]);
-        course.price = faker.commerce.price();
 
         // Create random reviews
-        course.reviews = Array.from(
-          { length: faker.number.int({ min: 1, max: 5 }) },
-          () => ({
-            userId: faker.helpers.arrayElement(users)._id, // Random user ID from the fetched users
-            content: faker.lorem.sentences(),
+        // course.reviews = Array.from(
+        //   { length: faker.number.int({ min: 1, max: 5 }) },
+        //   () => ({
+        //     userId: faker.helpers.arrayElement(users)._id, // Random user ID from the fetched users
+        //     content: this,
+        //     likes: users
+        //       .filter(() => faker.datatype.boolean())
+        //       .map((user) => user._id),
+        //     difficultyRating: faker.number.int({ min: 1, max: 5 }),
+        //     contentRating: faker.number.int({ min: 1, max: 5 }),
+        //     qualityRating: faker.number.int({ min: 1, max: 5 })
+        //   }),
+        // );
+
+        course.reviews = course.reviews.map((review) => {
+          return {
+            userId: faker.helpers.arrayElement(users)._id,
+            content: review.content,
             likes: users
               .filter(() => faker.datatype.boolean())
               .map((user) => user._id),
-            rating: faker.number.int({ min: 1, max: 5 }),
-          }),
-        );
+            difficultyRating: faker.number.int({ min: 1, max: 5 }),
+            contentRating: faker.number.int({ min: 1, max: 5 }),
+            qualityRating: faker.number.int({ min: 1, max: 5 })
+          }
+        })
 
         return course.save(); // Save the updated course
       }),
