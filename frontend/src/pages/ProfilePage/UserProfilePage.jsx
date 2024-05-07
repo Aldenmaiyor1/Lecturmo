@@ -75,7 +75,7 @@ const UserProfilePage = () => {
             <CardMedia
               component="img"
               title="profile img"
-              image={user.avatarPicture}
+              image={user.avatarPicture || '../../../no-avatar.png'}
               sx={{ width: 250, height: 250, borderRadius: 4 }}
             />
             <CardContent>
@@ -115,17 +115,11 @@ const UserProfilePage = () => {
               <Typography variant="subtitle2" color="initial">
                 {`${user.gender.charAt(0).toUpperCase()}${user.gender.slice(1).toLowerCase()}`}
               </Typography>
-              <Typography variant="body2" color="#78858F">
-                Rank
-              </Typography>
-              <Typography variant="subtitle2" color="initial">
-                {`${user.rank.charAt(0).toUpperCase()}${user.rank.slice(1).toLowerCase()}`}
-              </Typography>
             </CardContent>
           </Card>
         </Box>
 
-        <Card sx={{ width: 600, marginTop: 5, borderRadius: 4 }}>
+        <Card sx={{ width: 600, mt: 5, borderRadius: 4 }}>
           <CardContent>
             <Typography variant="h6" color="initial">
               About
@@ -137,7 +131,7 @@ const UserProfilePage = () => {
         </Card>
 
         {!user.isVerified && (
-          <Card sx={{ width: 600, marginTop: 5, borderRadius: 4 }}>
+          <Card sx={{ width: 600, mt: 5, borderRadius: 4 }}>
             <CardContent sx={{ display: 'flex', flexDirection: 'column' }}>
               <Typography variant="h6" color="initial">
                 Resend email verification
@@ -175,7 +169,7 @@ const UserProfilePage = () => {
 
         {user.courses.length > 0 ? (
           user.courses.map((course) => (
-            <Card sx={{ m: '20px 0', borderRadius: 3 }}>
+            <Card sx={{ borderRadius: 3, mt: 5 }}>
               <Box
                 sx={{
                   display: 'flex',
@@ -183,7 +177,7 @@ const UserProfilePage = () => {
                   //   justifyContent: "center",
                   alignItems: 'center',
                   width: 600,
-                  height: '150px',
+                  maxHeight: '180px',
                   bgcolor: 'light.main',
                   borderRadius: 4,
                 }}
@@ -221,37 +215,33 @@ const UserProfilePage = () => {
                     }
                   />
                 </Box>
-                <Stack flexDirection="row" mt="20px" >
+                <Stack
+                  flexDirection="row"
+                  mt="20px"
+                  justifyContent="center"
+                  alignItems="center"
+                >
                   <Box>
                     {course.lectures.length < 3 ? (
                       <Box
                         component="img"
-                        sx={{
-                          height: 20,
-                          width: 20,
-                        }}
+                        sx={{ width: '60px', height: '60px' }}
                         alt="Bronze medal"
-                        src="https://static.vecteezy.com/system/resources/previews/008/088/089/original/champion-art-bronze-medal-with-red-ribbon-icon-sign-first-place-isolated-on-transparent-background-illustration-free-vector.jpg"
+                        src="../../../bronze-medal.png"
                       />
                     ) : course.lectures.length < 8 ? (
                       <Box
                         component="img"
-                        sx={{
-                          height: 20,
-                          width: 20,
-                        }}
+                        sx={{ width: '60px', height: '60px' }}
                         alt="Silver medal"
-                        src="https://png.pngtree.com/element_our/20200702/ourmid/pngtree-silver-cartoon-medal-illustration-image_2286645.jpg"
+                        src="../../../silver-medal.png"
                       />
                     ) : course.lectures.length < 15 ? (
                       <Box
                         component="img"
-                        sx={{
-                          height: 20,
-                          width: 20,
-                        }}
+                        sx={{ width: '60px', height: '60px' }}
                         alt="gold medal"
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8szUihTTG9Xt756UbzaXgdEVu9So3MkRMeFfdLsNIQA&s"
+                        src="../../../public/gold-badge.png"
                       />
                     ) : null}
                   </Box>

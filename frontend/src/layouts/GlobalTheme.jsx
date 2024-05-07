@@ -45,9 +45,9 @@ export const theme = createTheme({
           backgroundColor: '#382e7f',
         },
         root: {
-          // backgroundColor: '#E2E2E2',
-          // height: '10px',
-          // borderRadius: '15px',
+          backgroundColor: '#E2E2E2',
+          height: '8px',
+          borderRadius: '15px',
         },
       },
     },
