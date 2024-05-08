@@ -456,198 +456,160 @@ const SinglePostPage = () => {
             </Stack>
           </Box>
 
-          {course.reviews && course.reviews.length > 0 ? (
-            reviews.map((review, index) => {
-              return (
-                <>
-                  <Grid mt={5} sx={{ width: '80%' }} key={index}>
-                    <Card sx={{ borderRadius: 5 }}>
-                      <CardContent sx={{ p: '20px' }}>
-                        <Typography variant="body1" color="initial">
-                          {review.content}
-                        </Typography>
-                        <Grid container justifyContent="space-between" mt={2}>
-                          <Grid item>
-                            <Stack direction="row">
-                              <Typography variant="body1" color="initial">
-                                Overall:
-                              </Typography>
-                              <Rating
-                                size="small"
-                                value={calculateSingleRating(review)}
-                                precision={0.5}
-                              />
-                            </Stack>
-                          </Grid>
-                          <Grid item>
-                            <Stack direction="row">
-                              <Typography variant="body1" color="initial">
-                                Difficulty:
-                              </Typography>
-                              <Rating
-                                size="small"
-                                value={review.difficultyRating}
-                                precision={0.5}
-                              />
-                            </Stack>
-                          </Grid>
-                          <Grid item>
-                            <Stack direction="row">
-                              <Typography variant="body1" color="initial">
-                                Content:
-                              </Typography>
-                              <Rating
-                                size="small"
-                                value={review.contentRating}
-                                precision={0.5}
-                              />
-                            </Stack>
-                          </Grid>
-                          <Grid item>
-                            <Stack direction="row">
-                              <Typography variant="body1" color="initial">
-                                Quality:
-                              </Typography>
-                              <Rating
-                                size="small"
-                                value={review.qualityRating}
-                                precision={0.5}
-                              />
-                            </Stack>
-                          </Grid>
-                        </Grid>
-                        <Box
-                          sx={{
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            alignItems: 'center',
-                            mt: '15px',
-                          }}
-                        >
-                          <Box
-                            sx={{
-                              display: 'flex',
-                              justifyContent: 'space-between',
-                              alignItems: 'center',
-                            }}
+      {course.reviews && course.reviews.length > 0 ? (
+        reviews.map((review, index) => {
+          return (
+            <>
+              <Grid mt={5} sx={{ width: '80%' }} key={index}>
+                <Card sx={{ borderRadius: 5 }}>
+                  <CardContent sx={{ p: '20px' }}>
+                    <Typography variant="body1" color="initial">
+                      {review.content}
+                    </Typography>
+                    <Grid container justifyContent="space-between" mt={2}>
+                      <Grid item>
+                        <Stack direction="row">
+                          <Typography variant="body1" color="initial">
+                            Overall:
+                          </Typography>
+                          <Rating
+                            size="small"
+                            value={calculateSingleRating(review)}
+                            precision={0.5}
+                            readOnly
+                          />
+                        </Stack>
+                      </Grid>
+                      <Grid item>
+                        <Stack direction="row">
+                          <Typography variant="body1" color="initial">
+                            Difficulty:
+                          </Typography>
+                          <Rating
+                            size="small"
+                            value={review.difficultyRating}
+                            precision={0.5}
+                            readOnly
+                          />
+                        </Stack>
+                      </Grid>
+                      <Grid item>
+                        <Stack direction="row">
+                          <Typography variant="body1" color="initial">
+                            Content:
+                          </Typography>
+                          <Rating
+                            size="small"
+                            value={review.contentRating}
+                            precision={0.5}
+                            readOnly
+                          />
+                        </Stack>
+                      </Grid>
+                      <Grid item>
+                        <Stack direction="row">
+                          <Typography variant="body1" color="initial">
+                            Quality:
+                          </Typography>
+                          <Rating
+                            size="small"
+                            value={review.qualityRating}
+                            precision={0.5}
+                            readOnly
+                          />
+                        </Stack>
+                      </Grid>
+                    </Grid>
+                    <Box
+                      sx={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        mt: '15px',
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          display: 'flex',
+                          justifyContent: 'space-between',
+                          alignItems: 'center',
+                        }}
+                      >
+                        <Avatar
+                          sx={{ mr: '15px' }}
+                          src={review.userId.avatarPicture}
+                        />
+                        <Box>
+                          <Typography
+                            variant="body1"
+                            color="initial"
+                            sx={{ fontWeight: 'bold' }}
                           >
-                            <Avatar
-                              sx={{ mr: '15px' }}
-                              src={review.userId.avatarPicture}
-                            />
-                            <Box>
-                              <Typography
-                                variant="body1"
-                                color="initial"
-                                sx={{ fontWeight: 'bold' }}
-                              >
-                                {review.userId.username}
-                              </Typography>
-                              <Typography variant="caption" color="initial">
-                                {new Date(review.createdAt).toLocaleDateString(
-                                  'en-US',
-                                  {
-                                    day: 'numeric',
-                                    month: 'long',
-                                    year: 'numeric',
-                                  }
-                                )}
-                              </Typography>
-                            </Box>
-
-                            {/* for siennna */}
-                            <Typography>{
-                              review.userId.courses.length < 3
-                                ? review.userId.courses.length
-                                : review.userId.courses.length < 8
-                                  ? review.userId.courses.length
-                                  : review.userId.courses.length < 15
-                                    ? review.userId.courses.length
-                                    : null
-                            }</Typography>
-
-
-                          </Box>
-                          <Box>
-                            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-
-                              {user == null
-                                ? <FavoriteBorderIcon
-                                  onClick={() => {
-                                    toast.error("Please log in to like the review")
-                                  }}
-                                  sx={{ color: 'heart.main', cursor: "pointer" }} />
-                                : (!heartLoading &&
-                                  (review.likes.findIndex(like => like.userId === user?._id) == -1
-                                    ? <FavoriteBorderIcon
-                                      onClick={() => {
-                                        console.log("fuck", user)
-                                        toggleLike(review._id, courseId)
-                                        setHeartLoading(true)
-                                        console.log("userId: ", review.likes.findIndex(like => like.userId === user._id))
-                                      }}
-                                      sx={{ color: 'heart.main', cursor: "pointer" }} />
-                                    : <FavoriteIcon
-                                      onClick={() => {
-                                        console.log("fuck", user)
-                                        toggleLike(review._id, courseId)
-                                        console.log("userId: ", review.likes.findIndex(like => like.userId === user._id))
-                                      }}
-                                      sx={{ color: 'heart.main', cursor: "pointer" }}
-                                    />
-                                  )
-                                )
+                            {review.userId.username}
+                          </Typography>
+                          <Typography variant="caption" color="initial">
+                            {new Date(review.createdAt).toLocaleDateString(
+                              'en-US',
+                              {
+                                day: 'numeric',
+                                month: 'long',
+                                year: 'numeric',
                               }
-                              <Typography variant="body1" color="initial">
-                                {review.likes.length}
-                              </Typography>
-                            </Box>
-                          </Box>
+                            )}
+                          </Typography>
                         </Box>
-                      </CardContent>
-                    </Card>
-                  </Grid>
-                </>
-              );
-            })
-          ) : (
-            <Box
-              mt={5}
-              display="flex"
-              justifyContent="center"
-              flexDirection="column"
-              alignItems="center"
-            >
-              <Divider
-                sx={{
-                  color: 'light.main',
-                  '&::before, &::after': {
-                    borderColor: 'light.main',
-                  },
-                  width: '100vw',
-                  p: '30px',
-                }}
-              >
-                No reviews
-              </Divider>
-              <Button
-                variant="contained"
-                sx={{
-                  width: '300px',
-                  borderRadius: 5,
-                  bgcolor: 'secondary.main',
-                  '&.MuiButton-root:hover': {
-                    bgcolor: 'secondary.main',
-                  },
-                }}
-              >
-                Please help us write a review!
-              </Button>
-            </Box>
-          )}
-        </Container>
-      }
-    </>
+                      </Box>
+                      <Box>
+                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                          <FavoriteBorderIcon sx={{ color: 'heart.main' }} />
+                          <Typography variant="body1" color="initial">
+                            {review.likes.length}
+                          </Typography>
+                        </Box>
+                      </Box>
+                    </Box>
+                  </CardContent>
+                </Card>
+              </Grid>
+            </>
+          );
+        })
+      ) : (
+        <Box
+          mt={5}
+          display="flex"
+          justifyContent="center"
+          flexDirection="column"
+          alignItems="center"
+        >
+          <Divider
+            sx={{
+              color: 'light.main',
+              '&::before, &::after': {
+                borderColor: 'light.main',
+              },
+              width: '100vw',
+              p: '30px',
+            }}
+          >
+            No reviews
+          </Divider>
+          <Button
+            variant="contained"
+            sx={{
+              width: '300px',
+              borderRadius: 5,
+              bgcolor: 'secondary.main',
+              '&.MuiButton-root:hover': {
+                bgcolor: 'secondary.main',
+              },
+            }}
+          >
+            Please help us write a review!
+          </Button>
+        </Box>
+      )}
+    </Container>
   );
 };
 

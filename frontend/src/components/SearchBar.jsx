@@ -9,7 +9,6 @@ import {
   Menu,
   Grid,
 } from '@mui/material';
-import { useTheme } from '@mui/material';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
@@ -46,8 +45,6 @@ const SearchBar = () => {
     submit();
   }, [searchTerm]);
 
-  const theme = useTheme();
-
   return (
     <Box
       sx={{
@@ -55,14 +52,15 @@ const SearchBar = () => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: '50px',
+        width: "80%",
+        mt: "50px",
       }}
     >
       <TextField
         placeholder="Search"
         sx={{
-          width: '500px',
-          backgroundColor: theme.palette.light.main,
+          width: "100%",
+          bgcolor: "light.main",
           borderRadius: 10,
           '& .MuiOutlinedInput-root': {
             '& fieldset': {

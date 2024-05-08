@@ -220,34 +220,19 @@ const EditProfilePage = () => {
   };
 
   return (
-    <Box>
-      <Box
-        sx={{
-          bgcolor: 'secondary.main',
-          marginTop: 5,
-          borderTopLeftRadius: 7,
-          borderTopRightRadius: 7,
-          position: 'relative',
-        }}
-      ></Box>
-      <Container
+    <Grid container>
+      <Grid container item
         sx={{
           bgcolor: 'primary.main',
-          zIndex: 10,
-          top: 200,
-          width: 600,
+          m: {xs: "50px 20px", md: "50px 100px", lg: "50px 200px"},
           height: 'fit-content',
-          left: 0,
-          right: 0,
-          bottom: 0,
           borderRadius: 4,
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          marginBottom: '50px',
+          p: "20px"
         }}
+        justifyContent="center"
+        alignItems="center"
       >
-        <Box>
+        <Grid item xs={12}>
           <IconButton
             color="initial"
             component={Link}
@@ -256,13 +241,8 @@ const EditProfilePage = () => {
           >
             <ArrowBackIcon />
           </IconButton>
-        </Box>
-        <Box
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
+        </Grid>
+        <Grid item alignItems="center" justifyContent="center"
         >
           <Box
             sx={{
@@ -322,16 +302,14 @@ const EditProfilePage = () => {
               aria-label="edit avatar"
               onClick={handleCameraIconClick}
               sx={{
-                position: 'absolute',
-                left: '100px',
-                top: '110px',
-                bgcolor: 'light.main',
+                bgcolor: 'secondary.main',
+                mt: "5px"
               }}
             >
               <CameraAltIcon />
             </IconButton>
           </Box>
-        </Box>
+        </Grid>
 
         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
           <Grid container spacing={2}>
@@ -445,11 +423,11 @@ const EditProfilePage = () => {
               mt: 3,
               mb: 2,
               borderRadius: 2,
-              bgcolor: 'rgb(255,207,96)',
+              bgcolor: 'secondary.main',
               color: '#808080',
               '&:hover': {
-                bgcolor: 'rgb(255,199,71)',
-                color: '#382e7f',
+                bgcolor: 'secondary.main',
+                color: 'initial',
               },
             }}
           >
@@ -474,8 +452,8 @@ const EditProfilePage = () => {
             Successfully Updated Profile!
           </Alert>
         </Snackbar>
-      </Container>
-    </Box>
+      </Grid>
+    </Grid>
   );
 };
 
