@@ -13,6 +13,7 @@ import {
   TableBody,
   TextField,
   IconButton,
+  TableFooter
   Stack,
   FormControl,
   Select,
@@ -449,6 +450,7 @@ const LecturerPage = () => {
                             </Typography>
                           )}
                         </TableBody>
+                    <TableFooter></TableFooter>
                       </Table>
 
                       <Modal
