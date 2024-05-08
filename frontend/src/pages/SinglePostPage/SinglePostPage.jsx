@@ -50,13 +50,13 @@ const SinglePostPage = () => {
 
   const generateCourseReviewSummary = async (course_Id) => {
     setAiInProgress(true);
-    const courseIdObjt = {
+    const courseIdObj = {
       courseId: course_Id,
     };
 
     const response = await postRequest(
-      `${API_URL}/lecturai/summarizeReview`,
-      courseIdObjt
+      `${BASE_URL}/lecturai/summarizeReview`,
+      courseIdObj
     );
 
     if (!response.message.content) {
