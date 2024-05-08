@@ -21,6 +21,9 @@ export const theme = createTheme({
     text: {
       primary: '#2E2E2E',
     },
+    lightText: {
+      primary: "#808080"
+    },
     icon: {
       main: '#1C89B6',
     },

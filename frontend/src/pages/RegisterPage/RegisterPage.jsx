@@ -159,13 +159,10 @@ export default function RegisterPage() {
       maxWidth="sm"
       sx={{
         marginTop: '50px',
+        width: {xs: "95%"},
         bgcolor: 'primary.main',
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20,
-        borderBottomLeftRadius: 20,
-        borderBottomRightRadius: 20,
+        borderRadius: 5,
         paddingBottom: 5,
-        marginBottom: '50px',
       }}
     >
       <IconButton

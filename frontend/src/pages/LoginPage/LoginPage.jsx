@@ -87,21 +87,19 @@ export default function LoginPage() {
       component="main"
       maxWidth="xs"
       sx={{
-        marginTop: '50px',
+        mt: '100px',
+        width: '90%',
         bgcolor: 'primary.main',
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20,
-        borderBottomLeftRadius: 20,
-        borderBottomRightRadius: 20,
-        paddingBottom: 5,
+        borderRadius: 5,
+        p: '10px 10px',
       }}
     >
       <Box
         sx={{
-          marginTop: 8,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
+          width: '100%',
         }}
       >
         <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
@@ -169,8 +167,14 @@ export default function LoginPage() {
             fullWidth
             variant="contained"
             sx={{
-              mt: 3, mb: 2,
-              backgroundColor: 'secondary.main',
+              mt: 3,
+              mb: 2,
+              bgcolor: 'secondary.main',
+              color: 'lightText.primary',
+              '&:hover': {
+                color: 'initial',
+                bgcolor: 'secondary.main',
+              },
             }}
           >
             Login
