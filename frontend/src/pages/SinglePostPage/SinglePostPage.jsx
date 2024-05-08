@@ -409,8 +409,8 @@ const SinglePostPage = () => {
                     color="initial"
                     sx={{ fontWeight: 'bold' }}
                   >
-                    If you don't want to read reviews, please use AI to summarize
-                    reviews
+                    Not bother to read through?
+                    Try lecturAI to summarize the reviews for you!
                   </Typography>
                 )}
                 {aiError ? (
