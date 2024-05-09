@@ -116,9 +116,9 @@ env file is provided on Google form
 
 ---
 # 3. Fabric Accounts
-| Username       | Password       |
-| -------------- | -------------- |
-|   user1        |  123           |
+| Username       | Password       | Role          |
+| -------------- | -------------- |-------------- |
+|   user1        |  123           | Student       |
     
 
 
