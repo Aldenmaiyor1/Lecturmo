@@ -37,7 +37,7 @@ router.post('/summarizeReview', async (req, res) => {
     );
     const reviewArray = JSON.stringify(course.reviews);
 
-    if (!reviewArray)
+    if (!reviewArray || reviewArray.length <= 0)
       return res.status(400).json('This course has no review yet!');
 
     const completion = await openai.chat.completions.create({
