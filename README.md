@@ -1,7 +1,9 @@
 # COMPSCI 732 / SOFTENG 750 project - Team Quaint Quokkas
 
+# Lecturomo
+    
 ## Overview
-<b>Lecturmo</b> is a comprehensive platform designed for universities, aimed at enhancing the student experience and facilitating feedback mechanisms between students and lecturers. At its core, Lecturmo empowers students to share their insights and opinions by writing reviews of courses they've attended, creating a valuable resource for both current and prospective students.
+<b>Lecturmo</b> is a comprehensive platform designed for universities, aimed to enhance the university experience by fostering a transparent and informative environment for students to share their experiences and help others make informed decisions about their academic pursuits. At its core, Lecturmo empowers students to share their insights and opinions by writing reviews of courses they've attended, creating a valuable resource for both current and prospective students. Through its verification, attendance badge, QR code, and AI-driven features, Lecturmo empowers students and promotes accountability within the academic community.
 
 Your team members are:
 
