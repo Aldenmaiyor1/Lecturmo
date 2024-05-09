@@ -153,12 +153,12 @@ env file is provided on Google form
 
 
 ---
-# 6.Wiki
+# 6. Wiki
 
 
 ---
 
-# 7.Team members
+# 7. Team members
 
 - Alden Maiyor
 - Tuocheng (Tony) Li
