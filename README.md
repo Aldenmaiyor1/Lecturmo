@@ -115,7 +115,15 @@ env file is provided on Google form
     npm run dev
 
 ---
-# 3. How to Test
+# 3. Fabric Accounts
+| Username       | Password       |
+| -------------- | -------------- |
+|   user1        |  123           |
+    
+
+
+---
+# 4. How to Test
 
 ### Backend Test
 **Open Backend Directory**
@@ -136,18 +144,18 @@ env file is provided on Google form
 
     npm test
 
----
+--- 
 
-# 4. Deployment
-
-
----
-# 5.Wiki
+# 5. Deployment
 
 
 ---
+# 6.Wiki
 
-Your team members are:
+
+---
+
+# 7.Team members
 
 - Alden Maiyor
 - Tuocheng Li
