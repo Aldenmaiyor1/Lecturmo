@@ -27,27 +27,45 @@ Through these efforts, Lecturmo aims to provide a robust and user-friendly platf
 ---
 # 1. Features Overview
 
-- **Course Search:** 
-Users can easily search for courses within Lecturmo's web application, simplifying the process of finding relevant courses based on their interests and academic requirements.
-
-- **User Authentication:** 
-Providing secure login and registration processes for users to access and interact with the website.
-
+### User Identity Management Suite
 - **Verification Processes:** 
 Users initiate the verification process by providing their university email address. Subsequently, Lecturmo sends a verification email to the provided university email. Upon receiving the email, users are required to click on the verification link enclosed within the email to complete the verification process, thereby ensuring the authenticity and reliable of their identity.
 
+- **User Login & Registration:** 
+Providing secure login and registration processes for users to access and interact with the website.
+
+- **User Profile Management:** 
+Allow users to view and update their profile information for a personalized experience.
+
+### Attendance Management Suite
 - **QR Code Attendance Tracking:**
 Lecturers initiate the QR code generation process within Lecturmo and present the generated QR code to students. Students then scan the QR code using their mobile devices as part of their attendance process. To enhance security, each QR code changes every second and expires after 30 seconds, ensuring real-time and secure attendance tracking.
 
 - **Attendance Badges:**
 Students are rewarded with badges based on their attendance record, ranging from none to bronze, silver, and gold. The badge hierarchy is determined by the number of classes attended, with students achieving a bronze badge after attending three lectures, a silver badge after eight classes, and a gold badge after attending 15 classes. This system incentivizes regular attendance and recognizes students for their commitment to their academic pursuits.
 
-- **Write Reviews:**
-Users can easily share their insights and experiences by writing reviews for courses they have attended, fostering transparency and informed decision-making within the academic community.
+### Course Review Features Suite
+- **Course Search:** 
+Users can easily search for courses on Lecturmo's homepage, streamlining the process of finding relevant courses according to their academic interests and requirements.
 
 - **AI-Driven Course Review Summaries:** 
 Utilizing AI to generate concise summaries of course reviews for enhanced accessibility.
 
+- **Write Reviews:**
+Users can easily share their insights and experiences by writing reviews for courses they have attended, fostering transparency and informed decision-making within the academic community.
+
+- **Like Reviews:**
+Allows users to express appreciation for helpful reviews by liking them, fostering engagement and community interaction.
+
+- **Sort Reviews:**
+Enables users to organize reviews based on various criteria such as Newest, Highest Rating, or Lowest Rating, facilitating easier navigation and information retrieval.
+
+
+
+
+
+
+---
 
 Your team members are:
 
