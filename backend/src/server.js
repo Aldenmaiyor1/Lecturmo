@@ -11,6 +11,7 @@ import routes from './routes/index.js';
 import cookieParser from 'cookie-parser';
 import passport from 'passport';
 import './config/strategies/local-strategy.js';
+import { fa } from '@faker-js/faker';
 
 // Set's our port to the PORT environment variable, or 3000 by default if the env is not configured.
 const PORT = process.env.PORT ?? 3000;
@@ -25,12 +26,14 @@ const corsOptions = {
     const allowedOrigins = [
       /^https?:\/\/localhost(:\d+)?$/,
       /^https:\/\/lecturmon\.onrender\.com(\/.*)?$/,
-      /^https:\/\/(?:lecturmo(?:n)?|lecturemon)\.netlify\.app(\/.*)?$/
+      /^https:\/\/lecturmo(?:n)?\.netlify\.app(\/.*)?$/,
+      '*'
     ];
 
     const originIsAllowed = allowedOrigins.some(allowedOrigin => {
       if (typeof allowedOrigin === 'string') {
-        return origin === allowedOrigin;
+        // return origin === allowedOrigin;
+        return true
       } else {
         return allowedOrigin.test(origin);
       }
@@ -61,12 +64,13 @@ export async function startExpress() {
     session({
       secret: SECRET_KEY,
       saveUninitialized: false,
-      resave: false,
+      resave: true,
       store: MongoStore.create({
         mongoUrl: MONGODB_CONNECTION_STRING,
         collection: 'sessions',
       }), //session is now stored in db
       cookie: {
+        secure: false,
         maxAge: 60 * 60 * 1000, // 1 hour
       },
     })
