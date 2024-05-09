@@ -119,11 +119,14 @@ env file is provided on Google form
 | Username       | Password       | Role          |
 | -------------- | -------------- |-------------- |
 |   user1        |  123           | Student       |
+|   user2        |  123           | Student       |
+|   user3        |  123           | Student       |
+|   Lec1         |  123           | Lecturer      |
+|   Lec2         |  123           | Lecturer      |
+|   Lec3         |  123           | Lecturer      |
     
-
-
 ---
-# 4. How to Test
+# 4. How to Test the Code
 
 ### Backend Test
 **Open Backend Directory**
@@ -158,10 +161,24 @@ env file is provided on Google form
 # 7.Team members
 
 - Alden Maiyor
-- Tuocheng Li
+- Tuocheng (Tony) Li
 - Inez Yuan Ya Chong
-- Yue Qi
+- Yue (Carina) Qi
 - Tone Xie
 - Sienna Nguyen
+
+# 8. Responsibility
+- **Alden Maiyor:**
+Alden has developed QR code generation and scanner feature.
+
+- **Tuocheng (Tony) Li:** 
+
+- **Inez Yuan Ya Chong:** 
+
+- **Yue (Carina) Qi:** 
+
+- **Tone Xie:** 
+
+- **Sienna Nguyen:** 
 
 ![](./group-image/Quaint%20Quokkas.webp)
