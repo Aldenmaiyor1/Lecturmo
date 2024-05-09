@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import {
   Box,
@@ -18,8 +18,10 @@ const SearchBar = () => {
   const [categorySearch, setCategorySearch] = useState([]);
   const [courseSearch, setCourseSearch] = useState([]);
   const [searchTerm, setSearchTerm] = useState();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
   const navigate = useNavigate();
+  const dropdownRef = useRef(null);
 
   const submit = async () => {
     const response = await axios
@@ -37,13 +39,26 @@ const SearchBar = () => {
       .then((response) => {
         setCourseSearch(response.data.courses);
         setCategorySearch(response.data.category);
-        console.log(response.data);
+        // console.log(response.data);
       });
   };
 
   useEffect(() => {
     submit();
   }, [searchTerm]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <Box
@@ -71,6 +86,7 @@ const SearchBar = () => {
         }}
         onChange={(e) => {
           setSearchTerm(e.target.value);
+          setIsDropdownOpen(true);
         }}
         InputProps={{
           startAdornment: (
@@ -80,45 +96,48 @@ const SearchBar = () => {
           ),
         }}
       />
-      <Grid
-        container
-        flexDirection="column"
-        sx={{
-          bgcolor: 'light.main',
-          borderRadius: 3,
-          mt: '10px',
-          width: '100%',
-          zIndex: 999,
-          position: 'absolute',
-          top: '100%',
-          left: 0,
-        }}
-      >
-        {courseSearch != undefined && categorySearch != undefined
-          ? courseSearch.map((result) => {
-              return (
-                <Grid
-                  item
-                  key={result.id}
-                  sx={{
-                    p: '10px 10px 10px 10px ',
-                    '&:hover': {
-                      bgcolor: 'primary.main',
-                      cursor: 'pointer',
-                      borderRadius: 3,
-                    },
-                  }}
-                  onClick={() => {
-                    navigate(`/courses?courseId=${result._id}`);
-                    console.log(result._id);
-                  }}
-                >
-                  {result.courseName}
-                </Grid>
-              );
-            })
-          : null}
-      </Grid>
+      {isDropdownOpen && (
+        <Grid
+          ref={dropdownRef}
+          container
+          flexDirection="column"
+          sx={{
+            bgcolor: 'light.main',
+            borderRadius: 3,
+            mt: '10px',
+            width: '100%',
+            zIndex: 999,
+            position: 'absolute',
+            top: '100%',
+            left: 0,
+          }}
+        >
+          {courseSearch != undefined && categorySearch != undefined
+            ? courseSearch.map((result) => {
+                return (
+                  <Grid
+                    item
+                    key={result.id}
+                    sx={{
+                      p: '10px 10px 10px 10px ',
+                      '&:hover': {
+                        bgcolor: 'primary.main',
+                        cursor: 'pointer',
+                        borderRadius: 3,
+                      },
+                    }}
+                    onClick={() => {
+                      navigate(`/courses?courseId=${result._id}`);
+                      console.log(result._id);
+                    }}
+                  >
+                    {result.courseName}
+                  </Grid>
+                );
+              })
+            : null}
+        </Grid>
+      )}
     </Box>
   );
 };

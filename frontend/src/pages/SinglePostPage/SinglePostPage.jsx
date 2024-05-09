@@ -16,7 +16,6 @@ import {
 } from '@mui/material';
 import LoadingButton from '@mui/lab/LoadingButton';
 import React, { useEffect, useState, useContext } from 'react';
-import RateReviewIcon from '@mui/icons-material/RateReview';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -200,8 +199,7 @@ const SinglePostPage = () => {
           const response = await axios
             .get(`${BASE_URL}/courses/${courseId}`)
             .then((res) => {
-              console.log('single course: ', res.data.reviews);
-              console.log("sorting: ", sortBy)
+              // console.log('single course: ', res.data.reviews);
               setCourse(res.data);
               setReview(sortReviews(res.data.reviews));
               setInitialLoad(false)

@@ -68,6 +68,7 @@ const QrCode = () => {
       }}
     >
       <Box>
+        <Typography variant='h5' mb="10px" color="light.main">{courseCode}</Typography>
         <QRCode value={qrCode} />
         <Typography variant="body1" color="primary">
           {currentTime}

@@ -23,6 +23,17 @@ const HomePage = () => {
   const [posts, setPosts] = useState([]);
   const [open, setOpen] = useState(false);
   const [initialLoad, setInitialLoad] = useState(true);
+  const [toggleSearch, setToggleSearch] = useState(false)
+
+  const toggleSearchBar = ()=>{
+    setToggleSearch(!toggleSearch)
+  }
+
+  useEffect(()=>{
+    document.addEventListener("mousedown", (e)=>{
+      // console.log(e.target)
+    })
+  },[])
 
   useEffect(() => {
     console.log('message:', message);
@@ -33,7 +44,6 @@ const HomePage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      console.log('hello');
       try {
         const response = await axios
           .get(`${BASE_URL}/landing-posts`)
@@ -41,7 +51,7 @@ const HomePage = () => {
             setPosts(response.data);
             setInitialLoad(false);
           });
-        console.log('data', response.data);
+        // console.log('data', response.data);
       } catch (error) {
         console.log('Error fetching data: ', error);
       }
@@ -61,8 +71,8 @@ const HomePage = () => {
             alignItems: 'center',
           }}
         >
-          <Box component="img" src="../../../FullLogo.png" sx={{ width: "60%" }}></Box>
-          <SearchBar />
+          <Box component="img" src="../../../FullLogo.png" sx={{width: "60%"}}></Box>
+          <SearchBar toggle= {toggleSearch} skeet="skeet"/>
           <LandingPosts posts={posts} />
           <Snackbar
             open={open}

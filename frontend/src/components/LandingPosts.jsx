@@ -37,13 +37,13 @@ const LandingPosts = ({ posts }) => {
       totalRating += averageRating;
     });
     const overallRating = totalRating / totalReviews;
-    console.log('course: ', post.courseCode);
-    console.log(overallRating);
+    // console.log('course: ', post.courseCode);
+    // console.log(overallRating);
     return overallRating;
   };
 
   useEffect(() => {
-    console.log('posts:', posts);
+    // console.log('posts:', posts);
   }, [posts]);
 
   return (
@@ -72,7 +72,7 @@ const LandingPosts = ({ posts }) => {
                 }}
                 onClick={() => {
                   navigate(`/courses?courseId=${post._id}`);
-                  console.log(post);
+                  // console.log(post);
                 }}
               >
                 <Card
