@@ -11,3 +11,17 @@ export const updateUser = async (userId, updateData) => {
     return null;
   }
 };
+
+export const updateEmailToken = async (userId, emailToken) => {
+  try {
+    const user = await User.findByIdAndUpdate(userId, emailToken, {
+      new: true,
+    });
+    return user;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+};
+
+

@@ -168,10 +168,10 @@ const UserProfilePage = () => {
                 component="form"
                 sx={{
                   boxShadow: 'none',
-                  bgcolor: 'grey.main',
                   display: 'flex',
                   justifyContent: 'space-between',
                   padding: '5px',
+                  fontStyle: 'italic',
                 }}
               >
                 <InputBase

@@ -9,6 +9,7 @@ import { comparePassword, hashPassword } from '../../utils/useBcrypt.js';
 import { updateUser } from '../../controllers/userProfileController.js';
 import crypto from 'crypto';
 import { sendVerifyUniEmail } from '../../controllers/sendVerifyEmailController.js';
+import { updateEmailToken } from '../../controllers/userProfileController.js';
 
 const router = express.Router();
 
@@ -78,10 +79,13 @@ router.post('/resend-verification-email', async (req, res) => {
 
     if (!isValidUOAEmail(email)) {
       return res.status(403).json({
-        message: 'Please provide valid University of Auckland email.',
+        message: 'Please update email to a valid University of Auckland email.',
       });
     }
     const emailToken = crypto.randomBytes(32).toString('hex');
+
+    await updateEmailToken(req.user._id, { emailToken: emailToken });
+
     const response = await sendVerifyUniEmail(
       { username: username, emailToken: emailToken },
       email,
