@@ -68,14 +68,14 @@ Copy the respository URL and open the terminal in VScode:
 
     git clone https://github.com/UOA-CS732-SE750-Students-2024/project-group-quaint-quokkas.git
 
-1. ## Open the Project
+2. ## Open the Project
 After clone into your own directory, open the direct repository that contains the codes of the program
 
 **Alernatively**
 
     cd project-group-quaint-quokkas
 
-1. ## MongoDB
+3. ## MongoDB
 env file is provided on Google form
 ### Backend env
 > Add backend env to  `./backend` directory
@@ -83,7 +83,7 @@ env file is provided on Google form
 ### Frontend env
 > Add frontend env to  `./frontend` directory
 
-1. ## Start the Program
+4. ## Start the Program
 ### Backend Command
 > Only available for backend project, which is under `./backend` directory
 
