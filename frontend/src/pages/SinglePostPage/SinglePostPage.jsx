@@ -23,7 +23,11 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import axios from 'axios';
 import { useSearchParams } from 'react-router-dom';
 import { postRequest } from '../../services/postRequest';
-import WriteReview from "../../components/writeReview";
+import Loading from '../../components/Loading';
+import WriteReview from '../../components/WriteReview';
+import { AuthContext } from '../../contexts/AuthContextProvider';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const BASE_URL = import.meta.env.VITE_BACKEND_EXPRESS_APP_ENDPOINT_API_URL ?? 'http://localhost:3000/api';
 
