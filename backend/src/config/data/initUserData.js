@@ -9,10 +9,9 @@ const PASSWORD = '123';
 
 export async function initUsers() {
   try {
-    // const initialUsers = await User.insertMany(usersJSON);
-    const secondInitUsers = await User.insertMany(newUsersJSON);
+    const initialUsers = await User.insertMany(usersJSON);
     console.log('Users initialized.');
-    return secondInitUsers;
+    return initialUsers;
   } catch (error) {
     console.error('Error adding users:', error);
     throw error;

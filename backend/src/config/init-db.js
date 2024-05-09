@@ -40,8 +40,8 @@ async function run() {
       await updateUserForeignKeys(users, courses);
       await updateCourseForeignKeys(users, courses);
 
-      await populateUsers(users, courses);
-      await populateCourses(users, courses);
+      // await populateUsers(users, courses);
+      // await populateCourses(users, courses);
     }
 
     console.log('Database seeded successfully.');

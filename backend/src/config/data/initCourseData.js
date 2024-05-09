@@ -7,10 +7,9 @@ const NUMBER_OF_COURSES = 5;
 
 export async function initCourses() {
   try {
-    // const intialCourses = await Course.insertMany(coursesJSON)
-    const secondInitCourses = await Course.insertMany(newCoursesJSON);
+    const intialCourses = await Course.insertMany(coursesJSON)
     console.log('Courses initialized.');
-    return secondInitCourses;
+    return intialCourses;
   } catch (error) {
     console.error('Error adding courses:', error);
     throw error;
