@@ -42,6 +42,7 @@ const SinglePostPage = () => {
   const [reviews, setReview] = useState();
   const [triggerReload, setTriggerReload] = useState(false)
   const [heartLoading, setHeartLoading] = useState(false)
+  const [active, setActive]= useState(false)
 
   //AI
   const [summary, setSummary] = useState(null);
@@ -75,6 +76,10 @@ const SinglePostPage = () => {
         courseId: varCourseId
       }
     ).then(setTriggerReload(!triggerReload))
+  }
+
+  const triggerReloadFunction = () =>{
+    setTriggerReload(!triggerReload)
   }
 
   const calculateOverallRating = (course) => {
@@ -163,35 +168,32 @@ const SinglePostPage = () => {
   };
 
   const sortReviews = (reviews) => {
-    console.log(sortBy)
     switch (sortBy) {
       case 30: // Highest Rating
-        return reviews
-          .slice()
-          .sort((a, b) => calculateSingleRating(b) - calculateSingleRating(a));
+        return reviews.slice().sort((a, b) => calculateSingleRating(b) - calculateSingleRating(a));
       case 40: // Lowest Rating
-        return reviews
-          .slice()
-          .sort((a, b) => calculateSingleRating(a) - calculateSingleRating(b));
-      case 50:
-        reviews.sort((a, b) => b.likes.length - a.likes.length);
-        return reviews;
-      case 60:
-        return reviews
-          .slice()
-          .sort((a, b) => calculateSingleRating(b) - calculateSingleRating(a));
+        return reviews.slice().sort((a, b) => calculateSingleRating(a) - calculateSingleRating(b));
+      case 50: // Most popular
+        return reviews.slice().sort((a, b) => b.likes.length - a.likes.length);
+      case 60: // Least popular
+        return reviews.slice().sort((a, b) => a.likes.length - b.likes.length);
       default: // Newest
-        return reviews
-          .slice()
-          .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+        return reviews.slice().sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     }
   };
 
-  // useEffect(() => {
-  //   if (reviews != undefined) {
-  //     setReview(sortReviews(reviews));
-  //   }
-  // }, [reviews]);
+  useEffect(()=>{
+    if(reviews){
+      setReview(sortReviews(reviews))
+    }
+
+  },[sortBy])
+  
+  useEffect(()=>{
+    if(user){
+      setActive(true)
+    }
+  },[user])
 
   useEffect(() => {
     setCourseId(searchParams.get('courseId'));
@@ -205,6 +207,7 @@ const SinglePostPage = () => {
             .get(`${BASE_URL}/courses/${courseId}`)
             .then((res) => {
               console.log('single course: ', res.data.reviews);
+              console.log("sorting: ", sortBy)
               setCourse(res.data);
               setReview(sortReviews(res.data.reviews));
               setInitialLoad(false)
@@ -340,7 +343,7 @@ const SinglePostPage = () => {
                 alignItems: 'center',
               }}
             >
-              <WriteReview />
+              <WriteReview active={active} triggerFunction={triggerReloadFunction}/>
               <Box
                 sx={{
                   display: 'flex',
@@ -441,8 +444,9 @@ const SinglePostPage = () => {
                   value={sortBy}
                   onChange={(e) => {
                     setSortBy(e.target.value)
-                    setReview(sortReviews(reviews))
+
                     console.log(e.target.value)
+                    console.log("fuck")
                   }}
                   sx={{ borderRadius: 5, bgcolor: 'light.main', height: '40px' }}
                 >

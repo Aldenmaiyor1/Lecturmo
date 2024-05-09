@@ -150,6 +150,7 @@ const UserProfilePage = () => {
                 </Typography>
                 <Paper
                   component="form"
+
                   sx={{
                     boxShadow: 'none',
                     bgcolor: 'grey.main',
@@ -171,101 +172,112 @@ const UserProfilePage = () => {
           </Grid>
         )}
 
-        {user.courses.length > 0 ? (
-          user.courses.map((course) => (
-            <Grid item xs={12} sx={{ width: '100%' }}>
-              <Card sx={{ borderRadius: 3, mt: 5 }}>
-                <Box
-                  sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    //   justifyContent: "center",
-                    alignItems: 'center',
-                    maxHeight: '180px',
-                    bgcolor: 'light.main',
-                    borderRadius: 4,
-                  }}
-                >
+
+
+
+        {user.roles != "lecturer"
+          ? (user.courses.length > 0 ? (
+            user.courses.map((course) => (
+              <Grid item xs={12} sx={{ width: '100%' }}>
+                <Card sx={{ borderRadius: 3, mt: 5 }}>
                   <Box
                     sx={{
-                      p: '20px',
                       display: 'flex',
-                      justifyContent: 'space-between',
-                      width: '100%',
+                      flexDirection: 'column',
+                      //   justifyContent: "center",
+                      alignItems: 'center',
+                      maxHeight: '180px',
+                      bgcolor: 'light.main',
+                      borderRadius: 4,
                     }}
                   >
-                    <Typography
-                      variant="h6"
-                      color="initial"
-                      sx={{ fontWeight: 'bold' }}
+                    <Box
+                      sx={{
+                        p: '20px',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        width: '100%',
+                      }}
                     >
-                      {course.courseCode}
-                    </Typography>
-                    <Typography variant="body2" color="#78858F">
-                      {course.lectures.length} Classes attended!
-                    </Typography>
-                  </Box>
-                  <Box sx={{ width: '100%', p: '0 30px' }}>
-                    <LinearProgress
-                      variant="determinate"
-                      value={
-                        course.lectures.length < 3
-                          ? (course.lectures.length / 3) * 100
-                          : course.lectures.length < 8
-                            ? (course.lectures.length / 8) * 100
-                            : course.lectures.length < 15
-                              ? (course.lectures.length / 15) * 100
-                              : null
-                      }
-                    />
-                  </Box>
-                  <Stack
-                    flexDirection="row"
-                    mt="20px"
-                    justifyContent="center"
-                    alignItems="center"
-                  >
-                    <Box>
-                      {course.lectures.length < 3 ? (
-                        <Box
-                          component="img"
-                          sx={{ width: '60px', height: '60px' }}
-                          alt="Bronze medal"
-                          src="../../../bronze-medal.png"
-                        />
-                      ) : course.lectures.length < 8 ? (
-                        <Box
-                          component="img"
-                          sx={{ width: '60px', height: '60px' }}
-                          alt="Silver medal"
-                          src="../../../silver-medal.png"
-                        />
-                      ) : course.lectures.length < 15 ? (
-                        <Box
-                          component="img"
-                          sx={{ width: '60px', height: '60px' }}
-                          alt="gold medal"
-                          src="../../../public/gold-badge.png"
-                        />
-                      ) : null}
+                      <Typography
+                        variant="h6"
+                        color="initial"
+                        sx={{ fontWeight: 'bold' }}
+                      >
+                        {course.courseCode}
+                      </Typography>
+                      <Typography variant="body2" color="#78858F">
+                        {course.lectures.length} Classes attended!
+                      </Typography>
                     </Box>
-                    <Typography>
-                      {course.lectures.length < 3
-                        ? `Attend ${3 - course.lectures.length} more lectures to rank up!`
-                        : course.lectures.length < 8
-                          ? `Attend ${8 - course.lectures.length} more lectures to rank up!`
-                          : course.lectures.length < 15
-                            ? "You're a superstar!"
-                            : null}
-                    </Typography>
-                  </Stack>
-                </Box>
-              </Card>
-            </Grid>
+                    <Box sx={{ width: '100%', p: '0 30px' }}>
+                      <LinearProgress
+                        variant="determinate"
+                        value={
+                          course.lectures.length < 3
+                            ? (course.lectures.length / 3) * 100
+                            : course.lectures.length < 8
+                              ? (course.lectures.length / 8) * 100
+                              : course.lectures.length < 15
+                                ? (course.lectures.length / 15) * 100
+                                : null
+                        }
+                      />
+                    </Box>
+                    <Stack
+                      flexDirection="row"
+                      mt="20px"
+                      justifyContent="center"
+                      alignItems="center"
+                    >
+                      <Box>
+                        {course.lectures.length < 3 ? (
+                          <Box
+                            component="img"
+                            sx={{ width: '60px', height: '60px' }}
+                            alt="Bronze medal"
+                            src="../../../bronze-medal.png"
+                          />
+                        ) : course.lectures.length < 8 ? (
+                          <Box
+                            component="img"
+                            sx={{ width: '60px', height: '60px' }}
+                            alt="Silver medal"
+                            src="../../../silver-medal.png"
+                          />
+                        ) : course.lectures.length < 15 ? (
+                          <Box
+                            component="img"
+                            sx={{ width: '60px', height: '60px' }}
+                            alt="gold medal"
+                            src="../../../public/gold-badge.png"
+                          />
+                        ) : null}
+                      </Box>
+                      <Typography>
+                        {course.lectures.length < 3
+                          ? `Attend ${3 - course.lectures.length} more lectures to rank up!`
+                          : course.lectures.length < 8
+                            ? `Attend ${8 - course.lectures.length} more lectures to rank up!`
+                            : course.lectures.length < 15
+                              ? "You're a superstar!"
+                              : null}
+                      </Typography>
+                    </Stack>
+                  </Box>
+                </Card>
+              </Grid>
+            ))
+          ) : (
+            <p>oh naurr</p>
           ))
-        ) : (
-          <></>
-        )}
+          : null}
+
+
+
+
+
+
 
         <Button
           variant="contained"
