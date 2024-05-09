@@ -52,15 +52,16 @@ const SearchBar = () => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        width: "80%",
-        mt: "50px",
+        width: { xs: '80%', lg: '70%' },
+        mt: '50px',
+        position: 'relative',
       }}
     >
       <TextField
         placeholder="Search"
         sx={{
-          width: "100%",
-          bgcolor: "light.main",
+          width: '100%',
+          bgcolor: 'light.main',
           borderRadius: 10,
           '& .MuiOutlinedInput-root': {
             '& fieldset': {
@@ -87,6 +88,10 @@ const SearchBar = () => {
           borderRadius: 3,
           mt: '10px',
           width: '100%',
+          zIndex: 999,
+          position: 'absolute',
+          top: '100%',
+          left: 0,
         }}
       >
         {courseSearch != undefined && categorySearch != undefined

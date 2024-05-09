@@ -339,7 +339,6 @@ const LecturerPage = () => {
                 Create QR code
               </Button>
             </Box>
-
             <Box bgcolor="primary.main" width="100vw" pr="5px">
               <Stack
                 direction="row"
@@ -374,7 +373,6 @@ const LecturerPage = () => {
                 </FormControl>
               </Stack>
             </Box>
-
             {courses.length > 0 ? (
               courses.map((course) => (
                 <Box
@@ -479,6 +477,8 @@ const LecturerPage = () => {
                       justifyContent: 'center',
                       alignItems: 'center',
                       height: '100vh',
+                      mx: "10px",
+
                     }}
                     slotProps={{
                       backdrop: {
@@ -489,7 +489,7 @@ const LecturerPage = () => {
                     <Box
                       sx={{
                         bgcolor: 'secondary.main',
-                        p: 10,
+                        p: "50px 10px",
                         display: 'flex',
                         alignItems: 'center',
                         borderRadius: 5,

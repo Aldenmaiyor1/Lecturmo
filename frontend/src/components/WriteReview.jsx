@@ -14,6 +14,7 @@ import {
     Box,
     Typography,
     IconButton,
+    Container,
 } from '@mui/material';
 import { addReview } from '../services/review/reviewAPIFetch.js'
 
@@ -116,13 +117,13 @@ export default function WriteReview({active, triggerFunction}) {
                 open={BackdropOpen} // Changed BackdropOpen to open
                 onClose={handleClose}
             >
-                <Box sx={{ p: 2, bgcolor: 'white', mt: 1, width: '700px', borderRadius: 8, height: '320px' }} component="form"
+                <Box sx={{ p: 2, bgcolor: 'white', m: 5, width: '100vw', borderRadius: 8, maxHeight: '100%', display: "flex", justifyContent: "center", alignItems: 'center'}} component="form"
                     onSubmit={handleSubmit}
                     noValidate>
-                    <Grid container spacing={2} sx={{ ml: 2, }}>
-                        <Grid item xs={10} sm={6}>
+                    <Grid container spacing={2} sx={{ width: "100%" }}>
+                        <Grid item xs={12} sm={6}>
                             <Box sx={{
-                                width: 250,
+                                width: "100%",
                                 display: 'flex',
                                 alignItems: 'center',
                             }}>
@@ -146,7 +147,7 @@ export default function WriteReview({active, triggerFunction}) {
                                 )}
                             </Box>
                         </Grid>
-                        <Grid item xs={10} sm={6}>
+                        <Grid item xs={12} sm={6}>
                             <Box sx={{
                                 width: 250,
                                 display: 'flex',
@@ -172,7 +173,7 @@ export default function WriteReview({active, triggerFunction}) {
                                 )}
                             </Box>
                         </Grid>
-                        <Grid item xs={10} sm={6}>
+                        <Grid item xs={12} sm={6}>
                             <Box sx={{
                                 width: 250,
                                 display: 'flex',
@@ -198,7 +199,7 @@ export default function WriteReview({active, triggerFunction}) {
                                 )}
                             </Box>
                         </Grid>
-                        <Grid item xs={10} sm={6}>
+                        <Grid item xs={12} sm={6}>
                             <Box sx={{
                                 width: 250,
                                 display: 'flex',
@@ -221,7 +222,7 @@ export default function WriteReview({active, triggerFunction}) {
                                 label="Write a Review"
                                 multiline
                                 rows={5}
-                                sx={{ width: '600px' }}
+                                sx={{width: "100%"}}
                                 name="review" // Set the name attribute to identify the field in the event
                                 value={formData.review}
                                 onChange={handleChange}
