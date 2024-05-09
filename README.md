@@ -87,30 +87,30 @@ env file is provided on Google form
 ### Backend Command
 > Only available for backend project, which is under `./backend` directory
 
-- **Open Backend Directory**
+**Open Backend Directory**
 
     cd backend
 
-- **Install the Dependencies**
+**Install the Dependencies**
 
     npm install
 
-- **Run the App**
+**Run the App**
 
     npm run dev
 
 ### Frontend Command
 > Only available for frontend project, which is under `./frontend` directory
 
-- **Open Frontend Directory**
+**Open Frontend Directory**
 
     cd frontend
 
-- **Install the Dependencies**
+**Install the Dependencies**
 
     npm install
 
-- **Run the App**
+**Run the App**
 
     npm run dev
 
