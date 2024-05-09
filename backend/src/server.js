@@ -26,7 +26,7 @@ const corsOptions = {
     const allowedOrigins = [
       /^https?:\/\/localhost(:\d+)?$/,
       /^https:\/\/lecturmon\.onrender\.com(\/.*)?$/,
-      /^https:\/\/lecturmo(?:n)?\.netlify\.app(\/.*)?$/,
+      /^https:\/\/(?:lecturmo(?:n)?|lecturemon)\.netlify\.app(\/.*)?$/,
       '*'
     ];
 
