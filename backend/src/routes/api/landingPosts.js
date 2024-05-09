@@ -5,11 +5,8 @@ import { Course } from '../../schemas/courseSchema.js';
 const landingPosts = Router();
 
 landingPosts.get('/landing-posts', async (req, res) => {
-  console.log('skeet');
   try {
     const courses = await Course.find({});
-
-    //   console.log(courses);
 
     res.send(courses);
   } catch (error) {

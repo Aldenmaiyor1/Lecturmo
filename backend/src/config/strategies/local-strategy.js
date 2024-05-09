@@ -24,7 +24,6 @@ export default passport.use(
   new Strategy(async (username, password, done) => {
     try {
       const findUser = await User.findOne({ username });
-      // console.log('findUser:', findUser);
       if (!findUser) {
         const error = new Error('User not found');
         error.status = 401;
