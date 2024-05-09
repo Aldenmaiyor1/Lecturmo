@@ -15,7 +15,7 @@ const courseSchema = new Schema(
     level: String,
     reviews: [
       {
-        userId: { type: Schema.Types.ObjectId, ref: 'User' },
+        userId: { type: Schema.Types.ObjectId, required: true, ref: 'User', default: () => new mongoose.Types.ObjectId()},
         dummyId: String,
         content: String,
         likes: [

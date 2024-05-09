@@ -24,6 +24,7 @@ async function run() {
   try {
     console.log('Connecting to database.');
     await mongoose.connect(MONGODB_CONNECTION_STRING);
+    console.log(`Connected to database at ${MONGODB_CONNECTION_STRING}.`);
 
     await mongoose.connection.dropDatabase();
     console.log('Database cleared.');
