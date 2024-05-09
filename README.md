@@ -13,11 +13,33 @@ The purpose of Lecturmo is to empower students by providing a platform where the
 
 ### Development Focus
 <b>Lecturmo</b> focuses on several key features to achieve its goals
-- **Verification processes** to ensure the authenticity of reviewers
-- **Implementation of attendance badges** to incentivize participation and engagement
-- **Generation of QR codes** by lecturers to facilitate attendance tracking
-- **Integration of AI-driven features** to enhance the user experience and promote accountability within the academic community.
+
+- **Verification Processes:** Ensuring the authenticity of reviewers through verification processes, which helps maintain the credibility of course reviews.
+
+- **QR Code Attendance Tracking:** Enabling lecturers to generate QR codes for attendance tracking, streamlining the process and enhancing efficiency in monitoring student attendance.
+
+- **Attendance Badges:** Implementing attendance badges to incentivize student participation and engagement, encouraging active involvement in courses.
+
+- **AI-Driven Course Review Summaries:** Leveraging AI to enrich user experience and foster accountability within academia, particularly through automated review summarization, streamlining access to key insights.
+
 Through these efforts, Lecturmo aims to provide a robust and user-friendly platform for students to share and access course reviews.
+
+---
+# 1. Features Overview
+
+- **Student Empowerment:** 
+Students are encouraged to contribute to the platform by writing reviews of courses they've attended, enabling them to share their experiences and insights with their peers.
+
+- **Verification Processes:** 
+Users initiate the verification process by providing their university email address. Subsequently, Lecturmo sends a verification email to the provided university email. Upon receiving the email, users are required to click on the verification link enclosed within the email to complete the verification process, thereby ensuring the authenticity and reliable of their identity.
+
+- **QR Code Attendance Tracking:**
+Lecturers initiate the QR code generation process within Lecturmo and present the generated QR code to students. Students then scan the QR code using their mobile devices as part of their attendance process. To enhance security, each QR code changes every second and expires after 30 seconds, ensuring real-time and secure attendance tracking.
+
+- **Attendance Badges:**
+Students are rewarded with badges based on their attendance record, ranging from none to bronze, silver, and gold. The badge hierarchy is determined by the number of classes attended, with students achieving a bronze badge after attending three lectures, a silver badge after eight classes, and a gold badge after attending 15 classes. This system incentivizes regular attendance and recognizes students for their commitment to their academic pursuits.
+
+- **AI-Driven Course Review Summaries:** 
 
 
 
