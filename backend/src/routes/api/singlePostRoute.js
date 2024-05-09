@@ -13,7 +13,7 @@ SinglePageRouters.post("/toggle-like", async (req, res) => {
   const loggedInUserId = req.user
 
   if (loggedInUserId == undefined) {
-    return res.json({ Error_message: "user not logged in " })
+    return res.status(404).json({ Error_message: "user not logged in " })
   }
 
   const loggedInUserIdString = loggedInUserId._id.toString()
@@ -95,10 +95,7 @@ SinglePageRouters.get('/courses/:courseId', async (req, res) => {
       }
     });
 
-    // Log the fetched course for debugging purposes
-    console.log("Fetched course:", course);
-
-    res.json(course);
+    res.status(200).json(course);
 
     // const course = await Course.findById(courseId).populate({
     //   path: 'reviews',
