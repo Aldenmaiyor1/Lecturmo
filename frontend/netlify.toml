@@ -1,12 +1,11 @@
 [[headers]]
   # Set Content-Type header for .jsx files
-  for = "/*.jsx"
+  for = "/.jsx"
   [headers.values]
   Content-Type = "application/javascript"
 
 [[redirects]]
-  from = "/*"
+  from = "/"
   to = "/index.html"
   status = 200
-  force = true
-  headers = {Access-Control-Allow-Origin = '*'}
+  force = false
