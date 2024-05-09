@@ -122,11 +122,12 @@ env file is provided on Google form
 |   user1        |  123           | Student       |
 |   user2        |  123           | Student       |
 |   user3        |  123           | Student       |
-|   Lec1         |  123           | Lecturer      |
-|   Lec2         |  123           | Lecturer      |
-|   Lec3         |  123           | Lecturer      |
+|   lec1         |  123           | Lecturer      |
+|   lec2         |  123           | Lecturer      |
+|   lec3         |  123           | Lecturer      |
     
 ---
+
 # 4. User Stories for Students and Lecturers
 ## As a student, I can:
 1. **Find Relevant Courses Easily:** 
@@ -155,7 +156,28 @@ Implement an attendance badge system where students are rewarded with badges bas
 Define badge hierarchy based on the number of classes attended, providing incentives for students to attend regularly.
 
 ---
-# 5. How to Test the Code
+
+# 5. Important: Additional Information
+## Student
+### 1. Email Verification Process:
+##### A: To verify your email, please follow these steps:
+1. Provide your email address ending with "@aucklanduni.ac.nz".
+2. Check your spam folder if you don't receive the verification email promptly.
+
+### 2. QR Code Scanner:
+1. Scan QR Code with their phone.
+2. QR Code need be opened in Firefox browser.
+
+## Lecturer
+### 1. QR Code Generation:
+##### A: To generate QR Code, please follow these steps:
+1. Click "Create QR" button in the nav bar
+2. You can add a new lecture by clicking "Add Lecture"
+3. You can sort your lectures.
+4. Select the specific lecture
+5. Click "Create QR Code"
+
+# 6. How to Test the Code
 
 ### Backend Test
 **Open Backend Directory**
@@ -178,12 +200,12 @@ Define badge hierarchy based on the number of classes attended, providing incent
 
 --- 
 
-# 6. Deployment
+# 7. Deployment
 
 
 ---
 
-# 7. Team members
+# 8. Team members
 
 - Alden Maiyor
 - Tuocheng (Tony) Li
@@ -194,7 +216,7 @@ Define badge hierarchy based on the number of classes attended, providing incent
 
 ---
 
-# 8. Responsibility
+# 9. Responsibility
 - **Alden Maiyor:**
 Alden has developed QR code generation and scanner feature.
 
@@ -207,5 +229,7 @@ Alden has developed QR code generation and scanner feature.
 - **Tone Xie:** 
 
 - **Sienna Nguyen:** 
+
+
 
 ![](./group-image/Quaint%20Quokkas.webp)
