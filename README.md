@@ -75,6 +75,14 @@ After clone into your own directory, open the direct repository that contains th
 
     cd project-group-quaint-quokkas
 
+1. ## MongoDB
+env file is provided on Google form
+### Backend env
+> Add backend env to  `./backend` directory
+
+### Frontend env
+> Add frontend env to  `./frontend` directory
+
 1. ## Start the Program
 ### Backend Command
 > Only available for backend project, which is under `./backend` directory
@@ -107,12 +115,7 @@ After clone into your own directory, open the direct repository that contains th
     npm run dev
 
 ---
-# 3. MongoDB
-
-
-
----
-# 4. How to Test
+# 3. How to Test
 
 ### Backend Test
 - **Open Backend Directory**
@@ -133,11 +136,13 @@ After clone into your own directory, open the direct repository that contains th
 
     npm test
 
-# 5. Deployment
+---
+
+# 4. Deployment
 
 
-# 6.Wiki
-
+---
+# 5.Wiki
 
 
 ---
