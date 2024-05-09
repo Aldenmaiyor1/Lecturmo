@@ -3,6 +3,10 @@ import { useEffect, useState } from 'react';
 import QRCode from 'react-qr-code';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
+const FRONTEND_HOST_URL =
+  import.meta.env.VITE_FRONTEND_NETLIFY_APP_URL ??
+  'http://localhost:5173';
+
 const QrCode = () => {
 
   const navigate = useNavigate()
@@ -45,7 +49,7 @@ const QrCode = () => {
 
   useEffect(() => {
     setQrCode(
-      `http://localhost:5173/qr-landing-page?date=${currentTime}&course=${courseId}&lecture=${lecture}&courseCode=${encodeURI(courseCode)}`
+      `${FRONTEND_HOST_URL}/qr-landing-page?date=${currentTime}&course=${courseId}&lecture=${lecture}&courseCode=${encodeURI(courseCode)}`
     );
   }, [currentTime]);
 
