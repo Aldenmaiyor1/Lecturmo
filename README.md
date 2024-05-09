@@ -60,8 +60,83 @@ Allows users to express appreciation for helpful reviews by liking them, fosteri
 - **Sort Reviews:**
 Enables users to organize reviews based on various criteria such as Newest, Highest Rating, or Lowest Rating, facilitating easier navigation and information retrieval.
 
+---
+# 2. Steps for Running the Project
+
+1. ## Git Clone
+Copy the respository URL and open the terminal in VScode:
+
+    git clone https://github.com/UOA-CS732-SE750-Students-2024/project-group-quaint-quokkas.git
+
+1. ## Open the Project
+After clone into your own directory, open the direct repository that contains the codes of the program
+
+**Alernatively**
+
+    cd project-group-quaint-quokkas
+
+1. ## Start the Program
+### Backend Command
+> Only available for backend project, which is under `./backend` directory
+
+- **Open Backend Directory**
+
+    cd backend
+
+- **Install the Dependencies**
+
+    npm install
+
+- **Run the App**
+
+    npm run dev
+
+### Frontend Command
+> Only available for frontend project, which is under `./frontend` directory
+
+- **Open Frontend Directory**
+
+    cd frontend
+
+- **Install the Dependencies**
+
+    npm install
+
+- **Run the App**
+
+    npm run dev
+
+---
+# 3. MongoDB
 
 
+
+---
+# 4. How to Test
+
+### Backend Test
+- **Open Backend Directory**
+
+    cd backend
+
+- **Run Test**
+
+    npm test
+
+
+### Frontend Test
+- **Open Frontend Directory**
+
+    cd Frontend
+    
+- **Run Test**
+
+    npm test
+
+# 5. Deployment
+
+
+# 6.Wiki
 
 
 
