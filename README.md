@@ -27,8 +27,11 @@ Through these efforts, Lecturmo aims to provide a robust and user-friendly platf
 ---
 # 1. Features Overview
 
-- **Student Empowerment:** 
-Students are encouraged to contribute to the platform by writing reviews of courses they've attended, enabling them to share their experiences and insights with their peers.
+- **Course Search:** 
+Users can easily search for courses within Lecturmo's web application, simplifying the process of finding relevant courses based on their interests and academic requirements.
+
+- **User Authentication:** 
+Providing secure login and registration processes for users to access and interact with the website.
 
 - **Verification Processes:** 
 Users initiate the verification process by providing their university email address. Subsequently, Lecturmo sends a verification email to the provided university email. Upon receiving the email, users are required to click on the verification link enclosed within the email to complete the verification process, thereby ensuring the authenticity and reliable of their identity.
@@ -39,8 +42,11 @@ Lecturers initiate the QR code generation process within Lecturmo and present th
 - **Attendance Badges:**
 Students are rewarded with badges based on their attendance record, ranging from none to bronze, silver, and gold. The badge hierarchy is determined by the number of classes attended, with students achieving a bronze badge after attending three lectures, a silver badge after eight classes, and a gold badge after attending 15 classes. This system incentivizes regular attendance and recognizes students for their commitment to their academic pursuits.
 
-- **AI-Driven Course Review Summaries:** 
+- **Write Reviews:**
+Users can easily share their insights and experiences by writing reviews for courses they have attended, fostering transparency and informed decision-making within the academic community.
 
+- **AI-Driven Course Review Summaries:** 
+Utilizing AI to generate concise summaries of course reviews for enhanced accessibility.
 
 
 Your team members are:
