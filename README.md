@@ -118,21 +118,21 @@ env file is provided on Google form
 # 3. How to Test
 
 ### Backend Test
-- **Open Backend Directory**
+**Open Backend Directory**
 
     cd backend
 
-- **Run Test**
+**Run Test**
 
     npm test
 
 
 ### Frontend Test
-- **Open Frontend Directory**
+**Open Frontend Directory**
 
     cd Frontend
     
-- **Run Test**
+**Run Test**
 
     npm test
 
