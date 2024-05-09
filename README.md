@@ -155,7 +155,7 @@ Implement an attendance badge system where students are rewarded with badges bas
 Define badge hierarchy based on the number of classes attended, providing incentives for students to attend regularly.
 
 ---
-# 4. How to Test the Code
+# 5. How to Test the Code
 
 ### Backend Test
 **Open Backend Directory**
@@ -178,12 +178,12 @@ Define badge hierarchy based on the number of classes attended, providing incent
 
 --- 
 
-# 5. Deployment
+# 6. Deployment
 
 
 ---
 
-# 6. Team members
+# 7. Team members
 
 - Alden Maiyor
 - Tuocheng (Tony) Li
@@ -192,7 +192,9 @@ Define badge hierarchy based on the number of classes attended, providing incent
 - Tone Xie
 - Sienna Nguyen
 
-# 7. Responsibility
+---
+
+# 8. Responsibility
 - **Alden Maiyor:**
 Alden has developed QR code generation and scanner feature.
 
