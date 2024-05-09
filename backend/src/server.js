@@ -72,7 +72,7 @@ export async function startExpress() {
       cookie: {
         secure: false,
         maxAge: 60 * 60 * 1000, // 1 hour
-        sameSite: 'lax'
+        sameSite: 'none'
       },
     })
   );
