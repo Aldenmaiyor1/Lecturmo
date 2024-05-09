@@ -154,10 +154,7 @@ export default function LoginPage() {
               alignItems: 'center',
             }}
           >
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
+  
             <Link href="#" variant="body2">
               Forgot password?
             </Link>
@@ -204,9 +201,21 @@ function Copyright(props) {
       align="center"
       {...props}
     >
-      {'Copyright © '}
-      <Link color="inherit">Lectermo</Link> {new Date().getFullYear()}
-      {'.'}
+      {"Don't have an account? "}
+      <Link
+        href="/register"
+        variant="body2"
+        sx={{
+          textDecoration: 'none',
+          color: '#1C89B6',
+          '&:hover': {
+            textDecoration: 'underline',
+            color: '#1c69b6',
+          },
+        }}
+      >
+        {' Sign Up'}
+      </Link>
     </Typography>
   );
 }

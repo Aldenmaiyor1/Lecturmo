@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import axios from 'axios';
 import VerificationSuccess from '../ScanVerificationPage/VerificationSuccessPage.jsx';
 import VerificationError from '../ScanVerificationPage/VerificationErrorPage.jsx';
+import { toast } from 'react-toastify';
 
 const BASE_URL = import.meta.env.VITE_BACKEND_EXPRESS_APP_ENDPOINT_API_URL ?? 'http://localhost:3000/api';
 
 const QrLandingPage = () => {
+  const navigate = useNavigate()
+
   const [params, setParams] = useSearchParams();
   const [date, setDate] = useState(undefined);
   const [course, setCourse] = useState(undefined);
@@ -20,27 +23,32 @@ const QrLandingPage = () => {
 
   const submit = async () => {
     console.log(courseCode);
-    if (date && course) {
-      const response = await axios
-        .post(
-          `${BASE_URL}/qr-code`,
-          {
-            date: date,
-            courseId: course,
-            lecture: lecture,
-            courseCode: courseCode
-          },
-          {
-            headers: {
-              'Content-Type': 'application/json',
+    try {
+      if (date && course) {
+        const response = await axios
+          .post(
+            `${BASE_URL}/qr-code`,
+            {
+              date: date,
+              courseId: course,
+              lecture: lecture,
+              courseCode: courseCode
             },
-          }
-        )
-        .then((response) => {
-          setResponse(response);
-          console.log('skeet');
-        });
+            {
+              headers: {
+                'Content-Type': 'application/json',
+              },
+            }
+          )
+          .then((response) => {
+            setResponse(response);
+          });
+      }
+    } catch (error) {
+      toast.error("Please log in :)")
+      navigate("/login")
     }
+
   };
 
   async function getStatus() {

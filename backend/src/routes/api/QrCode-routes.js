@@ -22,14 +22,18 @@ QrRouters.post('/qr-code', async (req, res) => {
   const username = req.user;
 
   console.log(courseCode)
+  if(username === undefined){
+    console.log("handled")
+    return res.status(400).json({errorMessage: "please log in "})
 
+  }
   const usernameIdObject = new mongoose.Types.ObjectId(username._id);
   const courseIdObject = new mongoose.Types.ObjectId(courseId);
   const lectureIdObject = new mongoose.Types.ObjectId(lectureId);
 
   const dateNowSkeet = await fetch(
     `http://worldtimeapi.org/api/timezone/Pacific/Auckland`,
-  );
+  );  
   const dateNowJson = await dateNowSkeet.json();
   const dateNow = dateNowJson.utc_datetime;
 
