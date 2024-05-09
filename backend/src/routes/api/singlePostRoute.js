@@ -64,9 +64,11 @@ SinglePageRouters.get('/courses/:courseId', async (req, res) => {
         select: 'username avatarPicture courses isVerified',
       },
     });
+
     if (!course) {
       return res.status(404).json({ error: 'Course not found' });
     }
+    
     if (course && course.reviews.length > 0) {
       for(let i = 0; i < course.reviews.length; i++){
         course.reviews[i].userId.courses = course.reviews[i].userId.courses.filter(userCourse => userCourse.courseId == courseId);
