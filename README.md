@@ -160,17 +160,17 @@ Define badge hierarchy based on the number of classes attended, providing incent
 # 5. Important: Additional Information
 ## Student
 ### 1. Email Verification Process:
-##### A: To verify your email, please follow these steps:
+##### To verify your email, please follow these steps:
 1. Provide your email address ending with "@aucklanduni.ac.nz".
 2. Check your spam folder if you don't receive the verification email promptly.
 
-### 2. QR Code Scanner:
-1. Scan QR Code with their phone.
+### 2. Scan QR Code:
+1. Scan QR Code with your phone.
 2. QR Code need be opened in Firefox browser.
 
 ## Lecturer
 ### 1. QR Code Generation:
-##### A: To generate QR Code, please follow these steps:
+##### To generate QR Code, please follow these steps:
 1. Click "Create QR" button in the nav bar
 2. You can add a new lecture by clicking "Add Lecture"
 3. You can sort your lectures.
